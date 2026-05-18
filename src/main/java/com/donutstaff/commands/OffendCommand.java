@@ -74,8 +74,7 @@ public class OffendCommand implements CommandExecutor, TabCompleter {
         // Actually ban the player using Bukkit's ban list
         Date expiryDate = expiry == -1L ? null : new Date(expiry);
         String banReason = "&4You have been banned: " + punishmentName;
-        BanList<String> banList = Bukkit.getBanList(BanList.Type.NAME);
-        banList.addBan(resolvedName, banReason, expiryDate, sender instanceof Player ? ((Player) sender).getName() : "Console");
+        Bukkit.getBanList(BanList.Type.NAME).addBan(resolvedName, banReason, expiryDate, sender instanceof Player ? ((Player) sender).getName() : "Console");
 
         // Kick if online
         if (target != null && target.isOnline()) {
