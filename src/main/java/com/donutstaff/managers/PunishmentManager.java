@@ -82,7 +82,7 @@ public class PunishmentManager {
                     // If it was an offend (ban), unban the player
                     if (p.getType() == PunishmentType.OFFEND) {
                         Bukkit.getScheduler().runTask(plugin, () ->
-                                Bukkit.unbanPlayer(p.getPlayerName()));
+                            Bukkit.getBanList(org.bukkit.BanList.Type.NAME).pardon(p.getPlayerName()));
                     }
                 }
             }
