@@ -1,0 +1,20 @@
+name: Build DonutStaffV2
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - run: mvn package -B
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DonutStaffV2-jar
+          path: target/DonutStaffV2-*.jar
