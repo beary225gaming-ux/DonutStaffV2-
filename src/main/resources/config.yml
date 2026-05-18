@@ -1,0 +1,88 @@
+# ============================================================
+# Donut Staff V2 - config.yml
+# ============================================================
+# Time format: use s (seconds), m (minutes), h (hours), d (days)
+# Example: 30m = 30 minutes, 2h = 2 hours, 7d = 7 days
+# ============================================================
+
+# ---- WARN PUNISHMENTS ----
+warn_punishments:
+  - punishment: "Spam"
+    warn_time: "1h"
+  - punishment: "Caps"
+    warn_time: "30m"
+  - punishment: "Toxicity"
+    warn_time: "3h"
+  # Add as many as you want below:
+  # - punishment: "YourPunishmentName"
+  #   warn_time: "1h"
+
+# ---- TEMPMUTE PUNISHMENTS ----
+tempmute_punishments:
+  - punishment: "Spam"
+    tempmute_time: "30m"
+  - punishment: "Harassment"
+    tempmute_time: "2h"
+  - punishment: "Hate Speech"
+    tempmute_time: "12h"
+  # Add as many as you want below:
+  # - punishment: "YourPunishmentName"
+  #   tempmute_time: "1h"
+
+# ---- OFFEND (BAN) PUNISHMENTS ----
+offend_punishments:
+  - punishment: "Hacking"
+    ban_time: "30d"
+  - punishment: "Cheating"
+    ban_time: "7d"
+  - punishment: "Doxxing"
+    ban_time: "permanent"
+  # Add as many as you want below:
+  # - punishment: "YourPunishmentName"
+  #   ban_time: "7d"
+
+# ---- VCTEMPMUTE PUNISHMENTS ----
+vctempmute_punishments:
+  - punishment: "Loud Mic"
+    vctempmute_time: "15m"
+  - punishment: "VC Harassment"
+    vctempmute_time: "1h"
+  - punishment: "Music Playing"
+    vctempmute_time: "30m"
+  # Add as many as you want below:
+  # - punishment: "YourPunishmentName"
+  #   vctempmute_time: "30m"
+
+# ============================================================
+# MESSAGES - You can edit text, color codes, and fonts here.
+# Color codes: &0-&9, &a-&f for colors. &l=bold, &o=italic, &n=underline, &k=obfuscated
+# ============================================================
+
+messages:
+  warn:
+    # {player} = punished player name, {punishment} = punishment name, {time} = remaining time
+    format: "&l[WARN] &r&cPlayer: &f{player} &cgot warned for &f{punishment}&c, and it will wear off in &f{time}&c."
+  tempmute:
+    format: "&l[MUTE] &r&6Player: &f{player} &6got tempmuted for &f{punishment}&6, and it will wear off in &f{time}&6."
+  offend:
+    format: "&l[BAN] &r&4Player: &f{player} &4got banned for &f{punishment}&4, and it will wear off in &f{time}&4."
+  vctempmute:
+    format: "&l[VCMUTE] &r&5Player: &f{player} &5got vc muted for &f{punishment}&5, and it will wear off in &f{time}&5."
+
+  # Message shown to the punished player directly
+  warn_notify: "&cYou have been warned for: &f{punishment}&c. Duration: &f{time}&c."
+  tempmute_notify: "&6You have been tempmuted for: &f{punishment}&6. Duration: &f{time}&6."
+  muted_attempt: "&cYou are muted and cannot chat. Mute expires in: &f{time}&c."
+  offend_notify: "&4You have been banned for: &f{punishment}&4. Duration: &f{time}&4."
+  vctempmute_notify: "&5You have been VC muted for: &f{punishment}&5. Duration: &f{time}&5."
+
+  # Error / info messages
+  player_not_found: "&cPlayer not found: &f{player}"
+  punishment_not_found: "&cPunishment not found: &f{punishment}. &cUse tab-complete or check config.yml."
+  no_active_punishments: "&7No active punishments found."
+  already_punished: "&cThat player already has an active punishment of that type."
+  usage_warn: "&cUsage: /warn <player> <punishment>"
+  usage_tempmute: "&cUsage: /tempmute <player> <punishment>"
+  usage_offend: "&cUsage: /offend <player> <punishment>"
+  usage_vctempmute: "&cUsage: /vctempmute <player> <punishment>"
+  usage_list: "&cUsage: /{cmd} list"

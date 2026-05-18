@@ -1,0 +1,45 @@
+# ============================================================
+# Donut Staff V2 - spawnstash.yml
+# ============================================================
+# Configures the /spawnstash command structure.
+#
+# Layout (top-down view, Y = up):
+#
+#   [amethyst_cluster]    <- on top of the side block (Y+1 from side block)
+#   [side_block]          <- 1 block to the LEFT of the spawner, same Y
+#   [spawner]             <- where you are standing (your location)
+#
+# The spawner type is picked randomly from the spawner_types list below.
+# ============================================================
+
+spawnstash:
+  # --- SPAWNER ---
+  # List of mob types to randomly pick from when placing the spawner.
+  # Valid values: any EntityType name (ZOMBIE, SKELETON, SPIDER, CAVE_SPIDER, BLAZE, etc.)
+  spawner_types:
+    - ZOMBIE
+    - SKELETON
+    - SPIDER
+    - CAVE_SPIDER
+    - BLAZE
+
+  # --- SIDE BLOCK (1 left, same Y as spawner) ---
+  # The block placed 1 to the left of the spawner.
+  # Use any valid Bukkit Material name.
+  side_block: GOLD_BLOCK
+
+  # Which direction is "left"? Options: NORTH, SOUTH, EAST, WEST
+  # This is the direction the side block is placed relative to the spawner.
+  side_block_direction: WEST
+
+  # --- TOP BLOCK (on top of the side block) ---
+  # The block placed on top of the side block (Y+1 from side block).
+  # Default: AMETHYST_CLUSTER (as a placed block, treated as AMETHYST_BLOCK if cluster not placeable)
+  top_block: AMETHYST_CLUSTER
+
+  # Use AMETHYST_BLOCK as fallback if AMETHYST_CLUSTER cannot be placed as a block
+  top_block_fallback: AMETHYST_BLOCK
+
+  # --- MESSAGES ---
+  success_message: "&aStash spawned successfully at your location!"
+  fail_message: "&cFailed to spawn stash. Check console for errors."

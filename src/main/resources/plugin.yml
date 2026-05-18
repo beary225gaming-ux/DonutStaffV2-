@@ -1,0 +1,77 @@
+name: DonutStaffV2
+version: '${project.version}'
+main: com.donutstaff.DonutStaffV2
+api-version: '1.21'
+loader: paper
+description: Donut Staff Management Plugin v2
+authors: [DonutTeam]
+
+softdepend:
+  - voicechat
+
+commands:
+  warn:
+    description: Warn a player with a configured punishment
+    usage: /warn <player> <punishment>
+    permission: donutstaff.warn
+  warned:
+    description: View warned players list
+    usage: /warned list
+    permission: donutstaff.warned
+  tempmute:
+    description: Temporarily mute a player
+    usage: /tempmute <player> <punishment>
+    permission: donutstaff.tempmute
+  tempmuted:
+    description: View tempmuted players list
+    usage: /tempmuted list
+    permission: donutstaff.tempmuted
+  offend:
+    description: Ban a player with a configured punishment
+    usage: /offend <player> <punishment>
+    permission: donutstaff.offend
+  offended:
+    description: View offended (banned) players list
+    usage: /offended list
+    permission: donutstaff.offended
+  vctempmute:
+    description: Voice-chat mute a player temporarily
+    usage: /vctempmute <player> <punishment>
+    permission: donutstaff.vctempmute
+  vctempmuted:
+    description: View vc-muted players list
+    usage: /vctempmuted list
+    permission: donutstaff.vctempmuted
+  spawnstash:
+    description: Spawn a stash at your location
+    usage: /spawnstash
+    permission: donutstaff.spawnstash
+
+permissions:
+  donutstaff.warn:
+    description: Use /warn
+    default: op
+  donutstaff.warned:
+    description: Use /warned list
+    default: op
+  donutstaff.tempmute:
+    description: Use /tempmute
+    default: op
+  donutstaff.tempmuted:
+    description: Use /tempmuted list
+    default: op
+  donutstaff.offend:
+    description: Use /offend
+    default: op
+  donutstaff.offended:
+    description: Use /offended list
+    default: op
+  donutstaff.vctempmute:
+    description: Use /vctempmute
+    default: op
+  donutstaff.vctempmuted:
+    description: Use /vctempmuted list
+    default: op
+  donutstaff.spawnstash:
+    description: Use /spawnstash
+    default: op
